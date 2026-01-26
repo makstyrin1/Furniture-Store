@@ -35,16 +35,17 @@
 
 import os, json
 from pathlib import Path
+from django.core.serializers.json import DjangoJSONEncoder
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'app.settings')
 import django; django.setup()
 from django.apps import apps
+from django.db.models import ForeignKey, FileField, ImageField
 
 for model in apps.get_models():
     app_label = model._meta.app_label
     if app_label in ('auth', 'contenttypes', 'sessions', 'admin'):
         continue
 
-    # Используем ORM, а не SQL!
     data = []
     for obj in model.objects.all():
         fields = {}
@@ -52,8 +53,15 @@ for model in apps.get_models():
             if field.name == 'id':
                 continue
             value = getattr(obj, field.name)
-            # Django сам корректно сериализует значения (включая FileField, даты и т.д.)
-            fields[field.name] = value
+            # Обработка ForeignKey
+            if isinstance(field, ForeignKey):
+                fields[field.name + '_id'] = value.pk if value else None
+            # Обработка FileField / ImageField — сохраняем путь как строку
+            elif isinstance(field, (FileField, ImageField)):
+                fields[field.name] = str(value) if value else ""
+            # Остальные поля — как есть
+            else:
+                fields[field.name] = value
 
         data.append({
             "model": f"{app_label}.{model.__name__.lower()}",
@@ -63,6 +71,6 @@ for model in apps.get_models():
 
     (Path(app_label) / "fixtures").mkdir(exist_ok=True)
     with open(f"{app_label}/fixtures/{model.__name__.lower()}.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, default=str, ensure_ascii=False, indent=2)
+        json.dump(data, f, cls=DjangoJSONEncoder, ensure_ascii=False, indent=2)
 
 print("✅ Фикстуры созданы")

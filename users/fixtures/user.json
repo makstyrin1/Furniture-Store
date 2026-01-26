@@ -1,0 +1,19 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aZ43Ll6yD2yIl0u7y7VrsD$h6YotajYYdQr1hitBF4/qJwrCZqrvXlttN7DAET+z9o=",
+      "last_login": "2026-01-25T11:42:06.231Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "makstyrin1@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-01-25T11:27:45.391Z",
+      "image": ""
+    }
+  }
+]

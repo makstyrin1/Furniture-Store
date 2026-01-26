@@ -10,7 +10,7 @@
       "price": "150.00",
       "discount": "20.00",
       "quantity": 10,
-      "category": "Кухня"
+      "category_id": 2
     }
   },
   {
@@ -24,7 +24,7 @@
       "price": "93.00",
       "discount": "10.00",
       "quantity": 7,
-      "category": "Кухня"
+      "category_id": 2
     }
   },
   {
@@ -38,7 +38,7 @@
       "price": "670.00",
       "discount": "0.00",
       "quantity": 5,
-      "category": "Спальня"
+      "category_id": 3
     }
   },
   {
@@ -52,7 +52,7 @@
       "price": "365.00",
       "discount": "12.00",
       "quantity": 15,
-      "category": "Кухня"
+      "category_id": 2
     }
   },
   {
@@ -66,7 +66,7 @@
       "price": "430.00",
       "discount": "5.00",
       "quantity": 6,
-      "category": "Кухня"
+      "category_id": 2
     }
   },
   {
@@ -80,7 +80,7 @@
       "price": "610.00",
       "discount": "0.00",
       "quantity": 4,
-      "category": "Гостинная"
+      "category_id": 7
     }
   },
   {
@@ -94,7 +94,7 @@
       "price": "55.00",
       "discount": "10.00",
       "quantity": 14,
-      "category": "Спальня"
+      "category_id": 3
     }
   },
   {
@@ -108,7 +108,7 @@
       "price": "30.00",
       "discount": "20.00",
       "quantity": 6,
-      "category": "Гостинная"
+      "category_id": 7
     }
   },
   {
@@ -122,7 +122,7 @@
       "price": "10.00",
       "discount": "15.00",
       "quantity": 20,
-      "category": "Офис"
+      "category_id": 6
     }
   },
   {
@@ -136,7 +136,7 @@
       "price": "1500.00",
       "discount": "8.00",
       "quantity": 8,
-      "category": "Декор"
+      "category_id": 4
     }
   },
   {
@@ -150,7 +150,7 @@
       "price": "25.00",
       "discount": "5.00",
       "quantity": 11,
-      "category": "Декор"
+      "category_id": 4
     }
   },
   {
@@ -164,7 +164,7 @@
       "price": "30.00",
       "discount": "10.00",
       "quantity": 12,
-      "category": "Спальня"
+      "category_id": 3
     }
   }
 ]
