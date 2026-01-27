@@ -1,8 +1,5 @@
 from encodings.punycode import T
-from re import M
-from statistics import quantiles
-from tabnanny import verbose
-from tkinter import CASCADE
+
 from django.db import models
 
 

@@ -1,3 +1,8 @@
 from django.contrib import admin
+from django.views.debug import default_urlconf
 
-# Register your models here.
+from carts.models import Cart
+
+
+
+admin.site.register(Cart)
