@@ -70,3 +70,6 @@ def logout(request):
     messages.success(request, f"{request.user.username}, Вы вышли из аккаунта")
     auth.logout(request)
     return redirect(reverse('main:index'))
+
+def user_cart(request):
+    return render(request, 'users/users_cart.html')
