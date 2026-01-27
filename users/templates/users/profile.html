@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-{% load cart_tags %}
+{% load carts_tags %}
 
 
 {% block content %}
-                        <!-- Контент на странице -->
+<!-- Контент на странице -->
 <div class="row">
     <div class="container mt-5">
         <div class="row">
@@ -91,9 +91,11 @@
                          {% include "carts/includes/included_cart.html" %}
                         <!-- Закончилась разметка корзины -->
                     </div>
-                    <a class="btn btn-dark" href="../orders/create_order.html">
+                    {% if carts %}
+                    <a class="btn btn-dark" href="..orders/create_order.html">
                         Оформить заказ
                     </a>
+                    {% endif %}
                 </div>
             </div>
             <!-- Оформленные заказы -->
