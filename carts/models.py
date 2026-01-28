@@ -1,3 +1,4 @@
+from time import sleep
 from django.db import models
 
 from goods.models import Products
@@ -44,4 +45,6 @@ class Cart(models.Model):
         return round(self.product.sell_price() * self.quantity, 2)
 
     def __str__(self):
-        return f"Корзина {self.user.username} | {self.product.name} | {self.quantity}"
+        if self.user:
+            return f"Корзина {self.user.username} | Товар {self.product.name} | Количество {self.quantity}"
+        return f"Анонимная корзина | Товар {self.product.name} | Количество {self.quantity}"
