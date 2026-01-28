@@ -37,7 +37,7 @@ class Cart(models.Model):
         db_table = "cart"
         verbose_name = "Корзину"
         verbose_name_plural = "Корзина"
-        ordering = ('-created_timestamp', )
+        ordering = ('product__name', )
 
     objects = CartQueryset().as_manager()
 
