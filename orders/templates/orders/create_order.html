@@ -36,8 +36,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="id_last_name" class="form-label">Фамилия*:</label>
-                            <input type="text" class="form-control" id="id_last_name" name="last_name" 
-                            value="{% if form.last_name.value %}{{ form.last.value }}{% endif %}"
+                            <input type="text" class="form-control" id="id_last_name" name="last_name"
+                            value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
                             required>
                             {% if form.last_name.errors %}
                                     <div class="alert alert-danger alert-dismissible fade show">{{ form.last_name.errors }}</div>
@@ -92,6 +92,9 @@
                                     id="id_payment_on_get" value="1">
                                 <label class="form-check-label" for="id_payment_on_get">Наличными/картой
                                     при плучении</label>
+                                {% if form.payment_on_get.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.payment_on_get.errors }}</div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
